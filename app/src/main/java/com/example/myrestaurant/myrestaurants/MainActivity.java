@@ -8,9 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.Typeface;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView mAppNameTextView;
 
     private Button mfindRestaurantsButton;
     private EditText mLocationEditText;
@@ -19,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+        Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrichregular.ttf");
+        mAppNameTextView.setTypeface(ostrichFont);
 
         mLocationEditText = (EditText) findViewById(R.id.locationEditText);
         mfindRestaurantsButton = (Button) findViewById(R.id.findRestaurantsButton);
